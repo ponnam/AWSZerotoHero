@@ -1,0 +1,14 @@
+Pre-requisites:
+---------------
+
+
+- Valid Email Address
+- Valid Mobile Number
+- Credit/Debit Card (International transaction must be enabled)
+- PAN or any other identity Document for Identity Verification
+
+
+SignUp Link:
+------------
+
+https://aws.amazon.com/free

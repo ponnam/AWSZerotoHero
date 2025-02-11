@@ -1,0 +1,242 @@
+Elastic Compute Cloud - EC2:
+----------------------------
+
+--> EC2 is AWS Higly Available Service, which can offers resizable compute capacity in the cloud.
+
+--> EC2 can provide a Virtual Machine (Server), also known as EC2 Instance
+
+--> AWS uses Virtualization to provide the EC2 Instances.
+
+		- Citrix Xen Server
+		- Nitro Based Virtualization
+
+--> EC2 is Infrastructure as a Service (IaaS), which can provide Infrastructure.
+	
+	- CPU
+	- RAM
+	- Storage
+	- Networking
+	- Power Supply
+
+--> Infrastructure will be maintained and managed by AWS.
+
+--> EC2 provides 99.99% Availability
+
+--> EC2 offers the below for Instance Creation
+
+	- Purchasing Model
+	- Tenancy Model
+	- Instance Family
+
+
+Purchasing Model:
+-----------------
+
+--> EC2 Offers 3 types of Purchasing Models
+
+	- On-Demand
+	- Reserved
+	- Spot
+
+On-Demand:
+----------
+
+--> Is the Flexible Purchasing Model for EC2
+
+--> No Commitment -- we can create and delete the instance at any time and we will be charged only for the tenure we have used our EC2 instance
+
+--> EC2 Instance Capacity (CPU, RAM & Networking) can be resized at any time without any data loss
+
+--> EC2 instances will per charges per hour ( while they are running)
+
+--> No Upfront charges ( No Advance)
+
+
+Reserved Instances:
+-------------------
+
+--> If the Requirement of the EC2 instance is guaranteed for 1 Year or 3 Years, then it is recommended to go for Reserved Instances
+
+--> We have to provide a commitment of 1 Year or 3 Years
+
+--> Irrespective of the Instance usage, AWS will charge you for the committed time duration
+
+--> In the reserved instances, we need to choose a payment plan for the bill payment.
+
+--> EC2 offers the below payment plans
+
+	- No Upfront --> No need to make any advance payment (pay on Monthly)
+	- Partial Upfront --> 50% of the total cost of the reserved instance must be paid as advance
+	- Full Upfront --> 100% of the total cost of the reserved instance must be paid as an advance 
+
+--> Based on the Term Commitment & Payment plan, you can get upto 70% Discount.
+
+--> During the Committed period you cannot resize the capacity of the instances
+
+NOTE: Reserved Instance offers 2 types
+
+	- Standard	--> We cannot adjust the Capacity of the instances
+	- Convertible   --> It will allow you to increase the capacity whenever we need
+
+
+Spot Instance:
+--------------
+
+--> Spot instances offers upto 90% Discount.
+
+--> Spot instances are not recommended for Prod or Development purpose
+
+--> Spot Instances can be offered using the spare resources available on AWS Datacenters
+
+--> Spot instances can be terminated (Deleted) at any time with just 2 minutes notice and all the data will be lost.
+
+--> Spot instances can be used for testing purpose or for the application which can run with interruptions
+
+
+Tenancy option:
+---------------
+
+--> Based on how we place our Instance, there are3 types of Tenancy Models available
+
+	- Shared
+	- Dedicated Instance
+	- Dedicated Host
+
+
+Shared:
+-------
+
+--> We can share the Physical Server with other customers
+
+--> our EC2 instances are Virtually Isolated, No one can see our data.
+
+
+Dedicated Instance:
+--------------------
+
+--> Every customer will get their dedicated Hardware (storage), so that we cant share the physical hardware with other customers
+
+
+Dedicated Host:
+---------------
+
+--> Dedicate Host will provide a physical server for the requirement.
+
+--> If Your Software license is based on the no of Physical CPU Cores, then we must have a dedicate host to fulfil the licensing requirements.
+
+
+Instance Family:
+----------------
+
+--> AWS EC2 offers Different instance families for different use cases.
+
+	- General Purpose
+	- Compute Optimized
+	- Accelerated Computing
+	- Memory Optimized
+	- Storage Optimized
+	- HPC - High Performance Computing
+
+
+
+General Purpose:
+----------------
+
+--> General purpose instances provide a balance of compute, memory and networking resources.
+
+Compute Optimized:
+------------------
+--> Compute Optimized instances are ideal for compute bound applications that benefit from high performance processors.
+
+
+Accelerated Computing:
+----------------------
+
+--> Accelerated computing instances use hardware accelerators, or co-processors, to perform functions, such as floating point number calculations, graphics processing, or data pattern matching, more efficiently than is possible in software running on CPUs.
+
+--> Accelerated Computing offers GPU (Graphical Processing Unit) in the instance Family, which is recommended for the applications such as
+
+	- Machine Learning
+	- 3D Rendering
+	- Video Editing Tools
+
+
+
+Storage Optimized:
+-------------------
+
+--> Storage optimized instances are designed for workloads that require high, sequential read and write access to very large data sets 
+
+ex: Data Analytics
+
+
+Memory Optimized:
+-----------------
+
+--> Memory optimized instances are designed to deliver fast performance for workloads that process large data sets in memory.
+
+
+ex: Databases, In-Memory Cache
+
+HPC Optimized:
+--------------
+
+--> are designed for compute-intensive high performance computing (HPC) workloads, such as computational fluid dynamics (CFD), weather forecasting, and molecular dynamics.
+
+
+--> While Creating the EC2 instance, we have to select the Instance Type to choose the following
+
+	- Instance Family
+	- Size of the EC2 instance (Resources)
+
+	ex: t3.micro
+	    C7gn.xlarge
+
+	C --> Instance Family
+	7 --> Generation
+	g --> Processor Type
+	n --> Additional Capacity
+
+	xlarge  --> Instance size
+
+reference: https://aws.amazon.com/ec2/instance-types/
+
+
+Key Terminology:
+----------------
+
+	- Amazon Machine Image (AMI)
+	- Network
+	- Subnet
+	- IP Address
+		- Public IP
+			- Auto-Assign Public IP
+			- Elastic IP
+		- Private IP
+	- Security Group
+	- KeyPair
+	- Instance Type
+	- Storage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

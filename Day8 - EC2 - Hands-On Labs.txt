@@ -1,0 +1,90 @@
+1. Create a Windows EC2 instance in Hyderabad Region with free-Tier eligibility
+
+	Operating System 	: Windows Server 2019
+	Region			: Hyderabad
+	Storage			: 30 GB
+	Purchasing Model	: On-Demand
+	Tenancy Model		: Shared
+	Instance Type		: t2.micro or t3.micro
+	KeyPair			: Hyderabad.pem
+	Security Group		: Windows RDP (Allow RDP Traffic from anywhere)
+	Name			: My First Instance
+
+
+
+2. Note Down the details of the WIndows EC2 instance
+
+	UserName	: Administrator
+	Password	: sVS4;&=*us$Um%kHc=I23.vCu;DBZu2j
+	Public IP	: 18.60.255.98
+	Public DNS	: ec2-18-60-255-98.ap-south-2.compute.amazonaws.com
+	Private IP	: 172.31.1.245
+	Private DNS	: ip-172-31-1-245.ap-south-2.compute.internal
+
+
+3. Login to the Windows EC2 instance using RDP Client
+
+4. Stop the EC2 instance
+
+5. Start the EC2 instance
+
+6. Observe the Auto-Assign Public IP got changed
+
+7. Terminate the EC2 instance.
+
+8. Create a Linux EC2 instance with the below requirements
+
+	Operating System 	: Amazon Linux 2
+	Region			: N.virginia
+	Storage			: 8 GB
+	Purchasing Model	: On-Demand
+	Tenancy Model		: Shared
+	Instance Type		: t2.micro or t3.micro
+	KeyPair			: NVirginia
+	Security Group		: Linux SSH (Allow SSH Traffic from Anywhere)
+	Name			: Linux Server
+
+
+--> To login to the Linux Instance remotely, we must use SSH Client
+
+	ex: putty, mobaxterm etc...
+
+
+--> On AWS, by default to login to the Linux Instance username & Password combination is disabled for security reasons
+
+--> Username & Private Key to be used to login to the Linux instance
+
+--> Using the keypair which used at the time of Linux instance creation, we can generate the required private key in .ppk format.
+
+
+9. Install Putty software
+
+	https://www.putty.org/
+
+--> After installing the putty software we get the below applications
+
+	- Putty	--> SSH Client, can be used to login to Linux machine
+	- Puttygen --> Ket generator, can be used to get the .ppk private key from the .pem key pair
+
+
+10. Connect to the Linux EC2 instance, using the putty software.
+	a) generate the .ppk Private key using the puttygen
+	b) Connect to the instance using putty
+
+	Username	: ec2-user
+	Private Key	: 
+	Public IP	: 44.203.226.253
+
+
+Reference: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html
+
+
+
+
+
+
+
+
+
+
+	

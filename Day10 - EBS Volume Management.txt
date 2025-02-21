@@ -1,0 +1,33 @@
+EBS Volume Management:
+=======================
+
+--> We can Increase the VOlme size without loosing existing Data
+
+--> We can change the volume type from one EBS type to another
+
+	gp2  --> gp3 --> io1 --> st1 
+
+--> We cannot reduce the volume size
+
+
+Note: 1GB EBS volume of gp2 type is already attached to SERVER1A and it contains 10 files.
+
+1. Login to SERVER1A and observe 10 file already exist in D Drive.
+
+2. Increase the Volume size of the 1GB Volume to 3GB
+
+3. Reduce the EBS volume size from 130GB to 127GB
+
+	NOT POSSIBLE
+
+4. Change the volume type of 130GB Volume from st1 to gp3
+
+
+NOTE: An EBS Volume cannot be modified more than once in a 6 Hour Window
+
+5. Modify the 3GB Volume (Which is recently modified) again by increasing the size to 5GB and observe we cannot modify and we have to wait for at least 6 hours.
+
+
+NOTE: Make sure to DELETE all EBS Volumes and EC2 instances to avoid unnecessary charges.
+
+

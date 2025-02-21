@@ -1,0 +1,144 @@
+Elastic Block Store - EBS:
+--------------------------
+
+
+--> Amazon Elastic Block Store ( Amazon EBS) Provides Block level storage for EC2 instances as a VOLUME.
+
+--> EBS Volumes available as RAW, Unformatted Disk
+
+--> EBS volumes must be created with a filesystem (NTFS, EXT3, EXT4) to make the storage usable.
+
+--> EBS volumes can be attached with the EC2 instances in the same AZ
+
+--> ByDefault, We can attach the EBS volume to Single EC2 instance at a time.
+
+--> EBS provides the below vategories of storage options
+
+	a) Solid State Drive - SSD
+	b) Hard Disk Drive - HDD
+	c) Previous Generation Disk
+
+--> SSD Storage Volumes, the dominant performance attribute is IOPS ( Input Output operations per Second)
+
+--> HDD Storage volumes, the dominant performace attribute is Throughput (MB/s)
+
+
+Types of Volumes:
+-----------------
+
+1. Root Volume --> Is the volume, in which the operating systems installed
+2. EBS VOlume --> All other additional Volumes
+
+Note: root volume will be deleted automatically along with the EC2 instance termination.
+      EBS volumes, we have to delete manually after the Ec2 instance termination
+
+NOTE: gp2, gp3 & Magentic are free tier eligible, upto 30GB per month
+
+
+EBS Offers, different types of volumes for different use cases
+
+	1. General Purpose SSD 
+			- gp2
+			- gp3
+	
+	2. Provisioned IOPS SSD
+			- io1
+			- io2
+
+	3. Cold HDD  - sc1
+	
+	4. Throughput optimized HDD - st1
+
+	5. Magnetic - standard (previous generation)
+
+
+--> SSD harddisks will have the dominance performance of IOPS, where as the HDD'd dominance performance will be in throughput.
+
+
+--> EBS volumes can be attached to the Instances, which are in the same Availability Zone
+
+--> EBS volumes Cannot be attached to multiple instances at a time, instead volume can be detached from instance1 and attached to the instance2.
+
+
+Note: Create 3 EC2 instances SERVER1A, SERVER2B & SERVER3A in 1a, 1b & 1a AZ respectively.
+
+
+
+General Purpose SSD - gp2:
+--------------------------
+
+1. Create a 1GB EBS volume using gp2 type in us-east-1a AZ
+
+	Durability			-	99.8% - 99.9%
+	Min Size			-	1 GB
+	Max Size			-	16 TB
+	IOPS				-	Not Customizable
+	IOPS Ratio			-	[1:3, GB:IOPS], with minimum of 100 IOPS
+	MAX IOPS			-	16000 IOPS
+	Throughput			-	Not Applicable, Upto 250 MB/s
+	Free Tier			-	Yes, Upto 30GB per Month
+	Boot/Root  Volume		-	Yes
+	Multi-Attach			-	Not Supported
+
+2. Create 2GB EBS volume using gp3 type in us-east-1a AZ
+
+	Durability			-	99.8% - 99.9%
+	Min Size			-	1 GB
+	Max Size			-	16 TB
+	IOPS				-	Can be customized
+	IOPS Ratio			-	Upto [1:500, GB:IOPS], min of 3000 IOPS
+	MAX IOPS			-	16000 IOPS
+	Throughput			-	125 MB/s - 1000 MB/s   --> [1:4, MB/s:IOPS]
+	Free Tier			-	Yes, Upto 30GB per Month
+	Boot/Root  Volume		-	Yes
+	Multi-Attach			-	Not Supported
+
+
+3. Create 4GB EBS volume using io1 type in us-east-1b AZ
+
+4. Create 6Gb EBS volume of io2 type in us-east-1c AZ
+
+5. Create 125GB EBS volume using sc1 type in us-east-1b AZ
+
+6. Create 130 GB EBS Volume using st1 type in us-east-1a AZ
+
+7. Create 3GB EBS volume using standard type in us-east-1c
+
+
+
+8. Attach the 1GB EBS volume to the SERVER1A EC2 instance, and observe it cannot be attached to the SERVER2B Instance (In a different AZ)
+
+
+9. Login to SERVER1A and observe the 1GB VOlume as D Drive
+
+	Username	: 
+	Password	:
+	Public IP	:
+
+--> By Default, All new Hardware is in Offline mode
+--> The new volume doesn't have any filesystem, we must create a partition along with the file system
+
+
+10. Detach the 1GB volume from SERVER1A and attach ot to the SERVER3A and observe all 10 files exists.
+
+	- Make the Volume Online
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

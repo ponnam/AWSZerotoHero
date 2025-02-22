@@ -1,0 +1,179 @@
+Simple Storage Service - S3:
+----------------------------
+
+--> S3 is AWS managed Highly Available, Highly Scalable Object based storage
+
+--> We can Upload anytype f object into S3, we can share with Anyone.
+
+--> S3 Cannot be used as storage for your EC2 instance
+
+--> S3 doesn't support, operating systems & Software installation.
+
+--> S3 storage is available as Bucket. Bucket is a container in which all the objects will be stored
+
+--> S3 supports unlimited storage, and each object must not exceed 5 TB
+
+--> S3 offers 99.99% Availability.
+
+--> S3 offers 99.999999999 Durability ( 11 9's of Durability)
+
+--> While Creating the busket, we have to assign a name for the bucket. and we must follow naming rules
+
+
+
+S3 Bucket Naming Rules:
+-----------------------
+
+	- Bucket Name must be unique across all AWS Accounts
+	- Bucket Name must be between 3 and 63 characters
+	- Bucket name must not Contain Uppercase Characters (ex: A, B, C ..)
+	- Bucket name can contain Lowercase characters and Numbers
+	- Bucket name must not contain special characters except Period (.) & Dash (-)
+	- Bucket name must not looks like an IP Address (ex: 192.168.1.8)
+	- Bucket name must start and end with Either lowercase letter or number
+	- Bucket name must not contan consecutive periods ( ex: my..s3bucket)
+
+
+
+Valid Bucket Names:
+-------------------
+
+	mys3bucket
+	my.s3.bucket
+	my-s3-bucket
+	my--s3bucket
+	123.mys3bukcet
+	mys3bucket1234
+
+
+
+Invalid Bucket Names:
+----------------------
+
+	.mys3bucket
+	Mys3bucket
+	my..s3bucket
+	mys3bucket-
+	123.23.12.98
+	mys3.Bucket
+
+
+--> AWS S3 provides 2 types of S3 buckets
+
+	- General purpose S3 bucket
+	- Directory Bucket
+
+
+Note: Directory buckets can provide single digit milli second latency for object access -- Not recommended for Production/Critical Data.
+
+
+1. Create S3 bucket in N.Virginia Region with a  name myfirstbucket22feb2025
+
+2. Upload any object into the S3 bucket with all default options
+
+3. Note Down the object url.
+
+https://mys3bucket22feb2025.s3.us-east-1.amazonaws.com/test.txt
+
+--> Object url can be used to access the objects, if the object is public.
+
+4. use the object url to access the S3 object, and confirm that the object is private.
+
+NOte: By default, all S3 objects will be uploaded as private objects.
+
+
+
+--> We can convert any private object into public as per the requirement
+
+--> ACL can be used to convert any object into publicly readable.
+
+	Access Control List
+
+--> While creating the S3 bucket with all default options, the following setting were configured
+
+	- ACLs Disabled
+	- Block all public access - Enabled
+
+--> ACL must be enabled , in order to make any object public.
+
+
+--> while making the objects public using the ACL, "block all public access" setting will not allow us to make the object public. We must disable "Block all public access"
+
+
+Note: Disabling "block all public access" will not make your objects public automatically
+
+
+5. Make the object "Test.txt" as public object
+
+	a) Enable ACL on the S3 bucket
+	b) Disable "block all public access" option
+	c) Make the object as public.
+
+6. Upload an object as a public while uploading it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

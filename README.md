@@ -8,8 +8,7 @@ Welcome to the **AWS Zero to Hero** YouTube series! This series is designed to t
 - Prepare for AWS certifications
 - Build real-world cloud projects
 
-**Course Content : https://cutt.ly/awsdetails
-Email : TheCloudLearn@gmail.com
+**Email : TheCloudLearn@gmail.com
 Telegram Group : https://t.me/thecloudlearn**
 
 ![image](https://github.com/user-attachments/assets/34d4b486-ac96-4a2b-bccd-10603cec420f)

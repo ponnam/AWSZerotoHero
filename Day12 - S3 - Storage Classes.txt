@@ -1,0 +1,212 @@
+Storage Classes/ Tier:
+----------------------
+
+--> S3 offers Wide Variety of Storage classes to store the objects which fits into the requirements of Performance, Access, reliability & Cost requirement
+
+S3 Storage Classes
+
+	- Standard
+	- Standard-IA (Infrequent Access)
+	- Intelligent Tier
+	- OneZone IA
+	- Glacier Instant Retrieval
+	- Glacier Flexible Retrieval
+	- Glacier Deep Archive
+
+	- Express OneZone  ( For Directory Type of S3 buckets)
+
+
+Standard:
+---------
+
+--> Frequently Accessed Data (More than once in a month) with millisecond access
+
+	Availability				- 99.99%
+	Durability 				- 99.999999999%
+	Availability Zone			- ≥3
+	Min Storage Duration			- Not applicable
+	Min Billable Object Size		- Not Applicable
+	Monitoring and auto-tiering charges	- Not Applicable
+	Retrieval Charges			- Not Applicable
+
+
+Standard-IA (Infrequently Accessed):
+------------------------------------
+
+--> Infrequently Accessed Data (Once in a month) with millisecond access
+
+	Availability				- 99.9%
+	Durability 				- 99.999999999%
+	Availability Zone			- ≥ 3
+	Min Storage Duration			- 30 Days
+	Min Billable Object Size		- 128 KB
+	Monitoring and auto-tiering charges	- Not Applicable
+	Retrieval Charges			- Per GB Fees applicable
+
+
+Intelligent-tier:
+-----------------
+
+--> Data with changing or unknown access patterns
+
+
+	Availability				- 99.9%
+	Durability 				- 99.999999999%
+	Availability Zone			- ≥ 3
+	Min Storage Duration			- Not Applicable
+	Min Billable Object Size		- Not Applicable
+	Monitoring and auto-tiering charges	- Per Object fee applicable objects >=128KB
+	Retrieval Charges			- Not Applicable
+
+
+OneZone-IA:
+-----------
+
+--> re-creatable, infrequently accessed data stored in a single AZ with millisecond access
+
+	Availability				- 99.5%
+	Availability Zone			- 1 AZ
+	Min Storage Duration			- 30 Days
+	Min Billable Object Size		- 128 KB
+	Monitoring and auto-tiering charges	- Not Applicable
+	Retrieval Charges			- Per GB fees applicable
+
+
+--> Glacier storage classes are recommended to archive the data for a longer periods
+
+--> glacier offers you the minimum storage charges
+
+Glacier Instant Retrieval:
+--------------------------
+
+--> long-lived archive data accessed once in a quarter with instant retrieval in milliseconds
+
+	Availability				- 99.9%
+	Availability Zone			- ≥ 3
+	Min Storage Duration			- 90 Days
+	Min Billable Object Size		- 128 KB
+	Monitoring and auto-tiering charges	- Not Aplicable
+	Retrieval Charges			- Per GB fees Applicable
+
+
+Glacier Flexible Retrieval:
+---------------------------
+
+--> Long-Lived Archive data accessed once in a year with retrieval times of Minutes to Hours.
+
+	Availability				- 99.99%
+	Availability Zone			- ≥ 3
+	Min Storage Duration			- 90 Days
+	Min Billable Object Size		- Not Applicable
+	Monitoring and auto-tiering charges	- Not Applicable
+	Retrieval Charges			- Per GB Fees Applicable
+
+
+Glacier Deep Archive:
+---------------------
+
+--> Long-Lived Archive data accessed less than once in a year with retrieval times of Hours
+
+
+	Availability				- 99.99%
+	Availability Zone			- ≥ 3
+	Min Storage Duration			- 180 Days
+	Min Billable Object Size		- Not applicable
+	Monitoring and auto-tiering charges	- Not Applicable
+	Retrieval Charges			- Per GB Fees applicable
+
+Note:
+-----
+
+Reduced Redundancy Storage - RRS : Noncritical, frequently accessed data with milli seconds access (Not recommended as S3 standard is more cost effective)
+
+
+--> Storage class is not applicable for the S3 buckets, are for the objects which we store into the S3 buckets.
+
+--> In the Same S3 bucket, we can store multiple objects with different storage classes.
+
+	Object1 --> standard
+	Object2 --> standard-IA
+	object3 --> OneZone-IA
+
+
+1. create 7 Text files and upload into the S3 bucket using 7 different storage classes.
+
+2. Access all the objects from AWS Management console and confirm that the "Glacier Flexible retrieval" & "Glacier Deep archive" objects are not available for the immediate access
+
+--> To access the Glacier Objects, we need to initiate a restore request. Then S3 makes the object available to access for a certian period of time.
+
+--> The objects from the Glacier Flexible Retrieval, can be retrieved using 3 Retrieval tier
+
+	Expedited retrieval	--> 1-5 Minutes
+	Standard		--> Within 3-5 Hours
+	Bulk			--> With 5-12
+
+
+3. Initiate the Retrieval of the Glacier Flexible retrieval object using Expedited Retrieval
+
+
+--> the objects from the glacier deep archive, can be retrieved using 2 retrieval tier
+
+	Standard	--> With in 12 hours
+	Bulk		--> With in 48 Hours
+
+4. Initiate the Retrieval of the Glacier Deep Archive object using the Bulk retrieval.
+
+
+Reference for Storage charges: https://aws.amazon.com/s3/pricing/
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

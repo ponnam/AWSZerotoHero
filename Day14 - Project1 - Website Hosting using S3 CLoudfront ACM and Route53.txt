@@ -1,0 +1,42 @@
+Project:
+
+Host a Static Website for Production use
+
+	- Website must have secure access https
+	- High Performance
+	- Website must have a name which represent your company (awsclasses.in)
+
+
+
+Services to be used:
+--------------------
+
+	- Simple Storage Service - S3
+	- Godaddy or Route53
+	- Route53
+	- ACM
+	- CloudFront
+
+
+
+1. Create a HostedZone in Route53 for the domain "awsclasses.in"
+
+2. Update the Name Servers in Godaddy Domian registrar with the values of Route53 hostedzone
+
+3. Generate SSL Certificate for awsclasses.in
+
+4. Create S3 bucket and enable Static website hosting
+
+5. Create CloudFront distribution to point to the S3 bucket enabled Static website
+
+6. Create A (Alias)  Record in route53 to forward all the traffic of "awsclasses.in" to the cloudfront distribution url.
+
+
+
+
+S3 tatic website url:	http://awsclasses.in.s3-website-us-east-1.amazonaws.com
+
+CloudFront url	: https://d25rk3cd3ebo7w.cloudfront.net
+
+awsclasses.in	--> https://d25rk3cd3ebo7w.cloudfront.net
+

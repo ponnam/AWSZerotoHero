@@ -1,0 +1,56 @@
+Static Website Hosting:
+-----------------------
+
+--> S3 offers different types of features, and Static Website hosting is one of those available features.
+
+--> S3 allows you to host a static website without provisioning any Servers or without installing the webserver software
+
+--> S3 doesn't support Dynamic website hosting
+
+--> the website which is designed using the server side scripting, is known as dynamic website
+
+	ex: PHP, javascript etc..
+
+--> The websites which are designed using html, css are known as static websites.
+
+
+
+Note: we will download a sample website from the interent (html & css)
+
+
+1. Host a static website using AWS S3 service
+	a) Create a S3 bucket "mywebsite24feb2025" in N.Virginia region
+	b) Download a sample website from the interent
+	c) Upload the webpages into the S3 bucket as publicly readable
+	d) Enable "Static Website Hosting" feature on S3 and configure the index/root document
+	e) Note down the static website url and check the website is accessible or not.
+
+
+ 
+
+
+
+thecloudlearn
+
+
+thecloudlearn.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

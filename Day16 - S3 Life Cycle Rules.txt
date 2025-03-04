@@ -1,0 +1,66 @@
+Life Cycle Rules:
+-----------------
+
+--> Life Cycle rule can be used to transition (Move) the objects from one storage class to another storage class after a specific no of days from the data of creation.
+
+--> We can configure the separate life cycle rules for current version & Non-Current version of the objects.
+
+--> We can Configure the object Expiration & Permanent Deletion of the objects
+
+--> Object transition from one storage class to another must be as per the below top down approach
+
+		Standard
+		   |
+		Standard-IA
+		   |
+		Intelligent-Tier
+		   |
+		OneZone-IA
+		   |
+		Glacier Instant Retrieval
+		   |
+		GLacier Flexible retrieval
+		   |
+		Glacier deep Archive
+
+
+Note: We cannot move the objects from Bottom level storage class to the top level storage class
+
+
+1. Create  life Cycle rule on S3 bucket as per the below requirement
+
+Current Version:
+
+
+Standard  -- 30 Days --> Standard-IA -- 60 Days --> OneZone-IA -- 90 Days --> Glacier Flexible Retrieval -- 180 Days --> Glacier Deep Archive -- 365 Days --> Object must be expired (DELETE)
+
+
+Non-Current Version:
+
+Standard --30 Days --> Glacier Deep Archive -- 365 --> Delete Permanently
+
+
+Note: We cannot transition the objects from "OneZone-IA" to "Glacier Instant Retrieval"
+
+
+NOTE:
+
+Default minimum object size for transitioning is 128K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

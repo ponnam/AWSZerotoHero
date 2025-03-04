@@ -1,0 +1,78 @@
+Versioning:
+-----------
+
+--> Versioning in S3 allows you to maintain multiple variants of the object in the same S3 bucket
+
+--> S3 versioning is used to preserve, Retrieve & Restore every version of the object
+
+--> whenever there is a change in the object, it will preserve the data as previous version and the latest data as current version
+
+--> the users can see the latest version of the object at anytime, but as a admin we can see all the previous versions from the AWS Console.
+
+--> There is no additional charges for enabling Versioning feature, we have to pay for the storage used for al the versions together
+
+
+3 types of Versioning status
+
+	- Disabled
+	- Enabled
+	- Suspended
+
+--> Bydefault, S3 buckets will be created wit versioning Disabled.
+
+--> We cannot Disable the versioning on any S3 bucket, obce it is enabled. Instead we can suspend
+
+--> Suspending the versioning feature cannot create any new versions, but it will preserve all existing version until we delete them manually.
+
+
+1. Check the status of versioning on any S3 bucket.
+
+2. Create a new S3 bucket "versioning2march2025" and enable versioning at the time of Bucket creation.
+
+3. Upload a new object "File1.txt" into the S3 bucket as a Public object
+
+	Hi All		--> Current Version.
+
+
+4. Edit the object "file1.txt" and reupload into S3 bucket
+
+	Hi All 		--> Previous Version
+	Hello Everyone	--> Current Version
+
+Note: End users who access the object using the object url, can see the current version of the object, as an admin we can see all versions of the object from the AWS Console.
+
+5. Edit the object "File1.txt" and reupload into S3 bucket
+
+	Hi All 		--> Previous Version (V1)
+	Hello Everyone	--> Previous Version (V2)
+	slkdjfglhkda	--> Current Version  (V3)
+
+6. Revert the object changes, so that the users can see the V2 as the object's Data.
+	Delete the Current version (V3), So that the V2 becomes current version.
+
+
+7. Delete the object "file1.txt" and check that what the users can see if they try to access the deleted object.
+
+
+Note: If we delete any object from the Versioned Bucket, Object will be marked with a "Delete Marker" instead of Permanent deletion.
+
+--> If we want to recover the deleted Object, we need to delete the Delete marker.
+
+8. Recover the Deleted Obect "File1.txt" , By deleting the delete marker.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

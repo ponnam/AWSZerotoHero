@@ -1,0 +1,49 @@
+Replication Rules:
+------------------
+
+
+--> Replication rules can be used to replicate the objects from one s3 bucket to another bucket
+
+--> The Primary usecase of the replication rules are to maintain a backup for Disaster recovery
+
+--> Versioning must be enabled on source and Destination S3 buckets
+
+--> Buckets can be in the same region or across 2 different regions
+
+--> Replication rule continuously monitor the source bucket for new uploads (PUT), and the new object will be replicated to the Destination bucket.
+
+--> Replication rule require a set of permissions in order to monitor, read and replicate the objects from source to destination buckets, those permissions can be provided using IAM Role.
+
+--> Replication rule cannot replicate the existing objects, we need to use AWS Batch job at an extra cost.
+
+--> Batch Job can replicate the existing objects from source to destination buckets with the configured option. Batch Job is one time Job, and it requires permissions in the form of IAM Role
+
+--> We have an option to replicate the "DELETE MARKER" from source to destination bucket. But we cannot replicate the Permanent object deletion.
+
+
+1. Create a replication rule to replicate the objects from source to destination bucket across 2 different regions.
+
+	a) Create a bucket "source25march2025" in N.Virginia region
+	b) Create a bucket "destination25march2025" in Mumbai Region
+	c) Upload any 5 objects into "source25march2025"
+	d) Create Replication rule on "source25march2025" with the below configuration
+		- Storage Class on Destination bucket to be "Standard-IA"
+		- Delete marker must be replicated
+		- Create AWS Batch job to replicate existing objects (Chargeable)
+
+
+2. Upload an object into Source bucket, and observe that the objects got replicated into the destination bucket.
+
+3. Delete any object from the source bucket, and observe that the delete marker got replicated into the destination bucket
+
+4. Delete any object's version Permanently from the source bucket, and observe that the object still exist in the destination bucket
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+Bucket Policies:
+----------------
+
+--> Bucket Policy is a resorce based policy which can be used to ran permissions to access S3 bucket and objects in it.
+
+--> Bucket Policies are written in JSON Format
+
+--> We can create the bucket policies without knowing how to write JSON, with the help of policy generator.
+
+
+1. Create a bucket policy to allow Anonymous user to perform all actions on S3 bucket.
+
+	a) Create S3 bucket "bucketpolicy29march2025"
+		- ACL Disabled
+		- Disable "Block all Public Access"
+
+	b) Upload an object as pribate object and confirm that the object is not accessible.
+	c) Create a Bucket policy to make all the objects public.
+
+
+
+2. Access the object url and confirm that the object are public.
+
+
+Object url: https://bucketpolicy29march2025.s3.us-east-1.amazonaws.com/Image.jpg
+
+
+arn of the S3 bucket : arn:aws:s3:::bucketpolicy29march2025
+
+
+Bucket Policy:
+--------------
+
+
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1743253470137",
+    "Statement": [
+        {
+            "Sid": "Stmt1743253454246",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::bucketpolicy29march2025/*"
+        }
+    ]
+}
+
+
+
+
+
+

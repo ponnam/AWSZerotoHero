@@ -1,0 +1,27 @@
+Pre-Signed URL:
+---------------
+
+--> Pre-Signed url is used to share the Private objects in the S3 bucket with any one for a limited time period (ex: 5 mins)
+
+--> While Generating the pre-signed url, we need to configure the TTL (Time to Live - ex: 2 mins). So that the url will expire after the TTL
+
+NOTE:  We don't make any object as a public OBJECT
+
+
+1. Upload any object in to S3 bucket as a private Object
+
+2. Confirm that the object is not accessible using the Object url.
+
+NOTE: Don't Enable ACL on the S3 bucket
+
+3. Generate Pre-Signed url, to allow the users to access the object for the next 2 minutes only
+
+		TTL = 120 Seconds
+
+4. Verify the Pre-signed url.
+
+	https://thecloudlearn.s3.eu-north-1.amazonaws.com/Image.jpg
+
+5. Wait for 2 mins, and then use the same pre-signed url and confirm that the url EXPIRED.
+
+

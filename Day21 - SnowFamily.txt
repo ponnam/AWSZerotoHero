@@ -1,0 +1,52 @@
+Snow Family:
+------------
+
+--> AWS Snow Family is a set of physical devices designed for offline data transfer and edge computing when network connectivity is limited, slow, or expensive.
+
+--> It helps customers move large amounts of data to and from AWS efficiently.
+
+There are 3 types of Snow family Devices
+
+	- Snow Cone
+	- Snow Ball
+	- Snow Mobile
+
+UseCases:
+---------
+
+--> large-scale data migrations to AWS
+
+--> Edge Computing for Remote locations
+
+--> Disaster recovery and Databackup
+
+--> AI/ML processing
+
+
+AWS SnowCone:
+---------------
+
+--> Smallest Device - 8TB or 14 TB Storage
+
+--> Portable. Lightweight and rugged
+
+
+
+AWS SNow Ball:
+--------------
+
+--> 80 TB Storage, designed for bulk data transfer
+
+--> Includes GPUs and upto 104 vCPU
+
+
+AWS SnowMobile:
+---------------
+
+--> Shipping Container with 100 PB STorage
+
+--> Designed for massive data migrations ( ex: Entire Data center Migration)
+
+--> Delivered by AWS to the customer's location via truck
+
+

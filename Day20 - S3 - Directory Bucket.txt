@@ -1,0 +1,16 @@
+S3 Directory Bucket:
+--------------------
+
+--> Recommended for Low-Latency use cases
+
+--> These Buckets use only the "S3 Express one Zone" storage class, which provides faster processing of the data with in a single Availability Zone
+
+--> As the data is getting stored in only 1 AZ, data might get lost in case of AZ Crash.
+
+
+1. Create a directory type of the bucket and observe the features.
+
+
+
+
+

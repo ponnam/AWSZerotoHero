@@ -1,0 +1,56 @@
+Cloud Front:
+------------
+
+--> CloudFront is a Content Delivery Network (CDN) Service, which can be used to speed up the delivery of the Web Content
+
+--> With the help of CloudFront Distribution, The content can be cached at the edge locations, so that the user can load the content from the nearest edge location with high speed and low latency.
+
+--> By Default, there is a TTL of 24 Hours. Cached Content from the edge locations will be expired every 24 hours and new content will be cached from the Origin
+
+--> origin is the location from where the content to be delivered
+
+	ex: S3 bucket, Website, Web Application etc...
+
+--> If we want to expire the object from the edge locations before the TTL, then we can manually clear using "Manual Invalidation" at an extra cost.
+
+
+1. Create a CloudFront Distribution with S3 Bucket as Origin
+
+	a) Create S3 bucket "cloudfront03Apr2025" in N.Virginia
+		- Enable ACL
+		- Disable "Block all Public Access"
+
+	b) Upload any HD Image as public Object "Image.jpg"
+	c) Access the Image using the object url and observe the time taken to load the Image
+	d) Create CloudFront distribution and Note down the cloudfront url
+
+
+2. Access the Content using the Cloudfron url and observe the Loading Time (Latency)
+
+CloudFront Distribution URL: d6rvxj5o3vub0.cloudfront.net
+
+Object URL: https://cloudfront03apr2025.s3.us-east-1.amazonaws.com/Image.jpg
+
+
+Manual Invalidation:
+--------------------
+
+--> Is the process of Expiring the Objects from the Edge location before the TTL
+
+--> Manual INvalidation is chargeable
+
+
+3. Upload a new Image with the same Name "Image.jpg"
+
+4. Access the cloudfront distribution url and observe that you are getting the Old Image 
+
+5. Perform Manual Invalidation against "Image.jpg" (To expire the image from the edge location;s cache)
+
+6. check the cloudfront distribution url and observe the latest content is getting delivered.
+
+
+
+
+
+
+

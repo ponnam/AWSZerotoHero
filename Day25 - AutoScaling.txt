@@ -1,0 +1,117 @@
+Auto Scaling:
+-------------
+
+--> Auto scaling is feature that automatically adjusts the number of instances or resources within a system based on demand
+
+--> Autoscaling Continously Monitor the application and adjust the capacity to maintain steady and predictable performance with the lowest possible charges.
+
+--> Whenever the load is getting increased, then a new instance will be created in order to increase the total resources and the traffic can be distributed across all the instances.
+
+
+ScaleUP / ScaleOUT:
+-------------------
+
+--> The process of adding a new EC2 instance with respect to the increased load is known as Scale UP. it is also known as Scale Out.
+
+ScaleDown / Scale IN:
+---------------------
+
+--> The process of Reducing the Capacity of no of EC2 instances with respect to the reduced load is known as Scale Down. It is also known as Scale In.
+
+
+Auto scaling Contains 2 Components
+
+	- Launch Template /Launch Configuration
+	- Autoscaling Group
+
+--> Launch Template contains the information about how to create EC2 instance
+
+--> Launch template contains the following
+
+	- AMI
+	- Instance Type
+	- KeyPair
+	- Security Group
+	- Storage (EBS Volumes)	
+
+
+--> Autoscaling Group can contain the information about When to create a new Instance and when to delete the existing EC2 instance
+
+	- Launch Template
+	- Network (VPC)
+	- Availability Zone & Subnet
+	- TargetGroup
+	- healthCheck Grace Period
+	- Group Size
+		- Desired Capacity
+		- Min Capacity
+		- Max Capacity
+	- Scaling Policy
+		- Target Tracking Policy
+
+	- Instance Warm-up
+	- SNS Notification
+	- TAGS
+
+NOTE: Launch template is the Latest version for the Launch Configuration, and launch configuration is deprecated
+
+
+Terminology:
+------------
+
+	Min Capacity
+	Max Capacity
+	Desired Capacity
+	Actual Capacity
+
+--> Min Capacity is the no of instances to be running all the time even there is no load
+
+--> Desired Capacity is the required no of instances based on the current load on the application
+
+--> Actual capacity is the no of instances are running at the moment
+
+--> Max Capacity is the maximum no of instances that autoscaling can maintain 
+
+
+Working Principle:
+------------------
+
+	Min Capacity	- 2
+	Desired Capacity- 2
+	Actual Capacity	- 2
+	Max Capcity	- 5
+
+
+--> If we decided to adjust the capacity  based on the CPU Utilization, then we can set a threshold of "CPUUtilization>70%"
+
+--> Whenever the CPU is more than 70%, then the desired capacity will become +1
+
+	Desired Capacity 	- 2+1 =3
+
+--> But still the actual capacity is 2 only and a new instance wil be created to match the actual capacity with the desired capacity
+
+	Min Capacity	- 2
+	Desired Capacity- 3
+	Actual Capacity	- 3
+	Max Capacity	- 5
+
+
+--> Whenever the CPUUtilization is less than 70%, then the desired capacity will be -1
+
+	Desired Capcity	- 3-1 =2
+
+	Min Capacity	- 2
+	Desired Capacity- 2
+	Actual Capacity	- 3-1	= 2
+	Max Capacity	- 5
+
+
+--> Autoscaling is also known as "Horizontal Scaling"
+
+
+
+
+
+
+
+

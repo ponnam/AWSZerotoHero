@@ -1,0 +1,47 @@
+1. Create an Application Load Balancer to distribute the Website traffic across 2 Ec2 instances.
+
+	a) Create 2 Linux EC2 instances in 1a & 1b Availability zones
+	b) Host simple website on both Linux ec2 instances
+	c) Verify that the websites are accessible using public IP
+
+	d) Create Target group "MyFirstTG" and register the above 2 Ec2 instances as Targets
+	e) Create application load balancer and point to the above target group
+
+
+
+Host a simple website on Linux EC2 instance:
+--------------------------------------------
+
+	# update the yum repository
+
+	sudo yum update
+	
+	# Install httpd Webserver
+
+	sudo yum install httpd
+
+	# start the httpd service manually
+
+	sudo service httpd start
+
+	# configure the httpd service to be started automatically 
+
+	sudo chkconfig httpd on
+
+	# Host the Website
+
+	cd /var/www/html
+
+	sudo vi index.html
+
+
+
+Load Balancer DNS Name : myfirstALB-1109849752.us-east-1.elb.amazonaws.com
+
+
+
+
+
+
+
+

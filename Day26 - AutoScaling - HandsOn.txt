@@ -1,0 +1,120 @@
+Auto Scaling Hands-On:
+----------------------
+
+
+1. Create a Target Group "MyTargetGroup
+
+2. Create an Application Load balancer and connect with the above target group.
+
+
+1. Launch a simple web application using autoscaling feature in order to maintain best performance with lowest charges
+
+	Min Capacity - 2
+	max Capacity - 5
+	Desired Capacity - 2
+
+	1. Create a Target Group "MyTargetGroup"
+	2. Create an Application Load balancer and connect with the above target group.
+	a) Create an EC2 instance and host a simple website, and create an AMI
+
+	b) Create a Launch Template "MyLaunchTemplate"
+
+		- AMI
+		- Instance Type
+		- KeyPair
+		- Security Group (22, 80, 443)
+		- Storage (EBS Volume)
+	
+	c) Create Autoscaling Group "MyASG"
+
+		- Launch Template
+		- Network 
+		- Availability Zone & Subnet
+		- Target Group
+		- HealthCheck Grace Period
+		- Group Size
+			- Desired Capacity
+			- Min Capacity
+			- Max Capacity
+		- Scaling Policy
+			- Target Tracking policy
+
+		- Instance Warm-Up
+		- SNS Notification
+		- TAGS
+
+
+DNS NAme : MyALB-489103846.us-east-1.elb.amazonaws.com
+
+
+--> ON EC2 instances, There are 2 types of Monitoring
+
+	- Basic Monitoring
+	- Enhanced / Detailed Monitoring
+
+--> Basic Monitoring collet the information every 5 mins, where as the detailed monitoring collect the information every 1 min.
+
+
+--> On the Target group of the Load Balancer, there is a component called De-Registration Delay.
+
+--> De-Registration delay is the wait time to remove (De-register) the target from the target group
+
+--> ByDefault, the de-Registration delay is 300 sec. whenever we de-register the target it will wait for 300 seconds and existing users will be moved to the other targets and the the target will be removed from the target group.
+
+
+--> We can Modify the de registration delay as per our requirements
+
+3. Modify the De-Registration Delay to 60 seconds to avid the wait time
+
+
+--> The instance which is close to the next billing hour, will be deleted first by autoscaling group
+
+
+
+
+--> Autoscaling Supports Multiple types of Scaling POlicies
+
+	- Target Tracking Scaling Policy
+	- Scheduled Scaling
+	- Predictive Scaling
+	- Manual Scaling
+
+
+Schedule Scaling:
+-----------------
+
+--> We can schedule the instance creation and deletion at a specific point of time
+
+--> If we know that every day at 06:00 AM we need 4 instance until 5 PM, and from 5PM to next day morning 06:00 AM 2 Instances are enough. This requirement can be fulfilled using the scheduled scaling.
+
+
+Predictive Scaling:
+-------------------
+
+--> Based on the previous Usage/Requirements, auto scaling can predict how many instances are required in the future and capacity will be adjusted by creating or deleting the instances automatically.
+
+
+Manual Scaling:
+---------------
+
+--> We can adjust the capacity manually by changing the Min, Desired and max capacity values
+
+
+
+CLEANUP Autoscaling:
+--------------------
+
+1. Delete the Autoscaling Group
+2. Delete the Launch Template
+3. Delete the Load Balancer
+4. Delete the target Group
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,90 @@
+Elastic Load Balancer - ELB:
+----------------------------
+
+--> Elastic Load Balancer is Highly Available AWS managed service, by using which we can distribute the load across multiple healthy Servers
+
+--> These servers are known as Targets
+
+--> Also We can achieve high Availability using the Load Balancer.
+
+--> In general, All the traffic will be distributed across multiple targets, but whenever any target is Unhealthy then all the traffic will be redirected to the other healthy targets
+
+
+--> ELastic Load Balancer has 2 Modules
+
+	- Load Balancer
+	- Target Group
+
+--> Load balancer receive the request from the users, and it will be forwarded to the target group.
+
+--> Target group is the group in which we register the targets.
+
+--> Target group can distribute the traffic across all the healthy registered targets
+
+--> we can create a health check on the target group to monitor and evaluate the health of the targets
+
+--> By Default, the traffic will be distributed across all the healthy targets using Round Robin Method.
+
+
+Types of Load Balancers:
+------------------------
+
+	- Application Load Balancer (ALB)
+	- Network Load Balancer (NLB)
+	- Gateway Load Balancer
+	- Classic Load Balancer (CLB)
+
+
+Application Load Balancer:
+--------------------------
+
+--> To run Websites or WebApplications on HTTP & HTTPS ports
+
+--> Modern web applications with API and frontend routing
+
+--> Supports Host/path-based routing requirements
+
+
+Network Load Balancer:
+----------------------
+
+--> NLB Supports TCP, TLS and UDP Protocols
+
+--> Ultra-low latency
+
+--> handles Millions of requests per second
+
+--> Load balancing across VPN or Direct Connect links
+
+
+
+Gateway Load Balancer:
+----------------------
+
+--> Load balances traffic to virtual appliances (firewalls, intrusion detection systems, etc.)
+
+--> Integrates with 3rd party Network security appliances
+
+--> GENEVE Protocol
+
+
+Classic Load Balancer:
+----------------------
+
+--> Legacy ELB Solution
+
+--> Simple Load Balancing for EC2 instances
+
+--> No HTTP/2 support
+
+
+
+
+
+
+
+
+
+
+
+

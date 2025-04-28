@@ -1,0 +1,104 @@
+Virtual Private Cloud - VPC:
+----------------------------
+
+--> VPC is a Virtual Isolated Network in the cloud
+
+--> By default, AWS Provides a default VPC in each region at the time of AWS Account creation
+
+--> Default VPC Contains multiple subnets, one in each AZ
+
+--> By default, we can create max of 5 VPC per region, which is a soft limit.
+
+
+VPC Components:
+---------------
+
+	- Network
+	- Subnet
+		- Public Subnet
+		- Private Subnet
+	- Internet Gateway - IGW
+	- Route Tables
+		- Route
+	- Bastion Host
+	- Network Address Translation - NAT
+		- NAT Instance (Outdated)
+		- NAT Gateway
+	- Network ACL (NACL)
+	- VPC Peering
+
+
+Network:
+--------
+
+-->  Network is an isolate logical section to connect all the instances. is also known as VPC.
+
+--> VPC Span across all the AZ of the Region
+
+
+Subnet:
+-------
+
+--> Subnet is a small portion of the network, which exist in a single AZ.
+
+--> By default, we can create 200 subnets per VPC, which can be adjustable as per the requirement
+
+
+Public Subnet: Is the subnet in which the instance can be assigned with public IP and the instances are accessible from any where across the globe.
+
+
+Private Subnet: is the subnet in which the instances cant be assigned with Public IP and all the private subnet instances are accessible with in the VPC only.
+
+
+Internet Gateway - IGW:
+-----------------------
+
+--> IGW is AWS managed, Highly Available & Scalable component which can be used to establish the communication between the VPC network and the internet
+
+--> We can attach only 1 IGW per VPC
+
+
+Route Table:
+------------
+
+--> Route Table is a component which is required for the communication.
+
+--> Route table shows the path to reach the destination.
+
+--> Whenever we create a VPC, a default route table will be created and it is known as "Main" route table.
+
+--> New Route table contains a default route, which establish the communication with all the subnets in the same VPC
+
+	Destination				Target
+	-----------				------
+
+	192.168.0.0/16				Local
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

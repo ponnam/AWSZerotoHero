@@ -1,0 +1,54 @@
+1. Create a CustomVPC "MyFirstVPC" in N.Virginia region as per the Below requirement
+
+	VPC CIDR Range		- 192.168.0.0/16
+	Public Subnet CIDR	- 192.168.1.0/24	-	us-east-1a
+	Private Subnet CIDR	- 192.168.2.0/24	-	us-east-1b
+
+
+	a) Create a VPC "MyFirstVPC" with CIDR Range 192.168.0.0/16
+	b) Create an IGW "MyFirstVPC-IGW"
+	c) Attach the IGW with the VPC "MyFirstVPC"
+	d) Create a subnet "Public Subnet" with CIDR Range 192.168.1.0/24 in us-east-1a
+	e) Create a route Table "PublicRT" and create an additional route as below
+
+		Destination			Target
+		-----------			------
+
+		192.168.0.0/16			local
+
+		0.0.0.0/0			IGW	--> Additional route
+
+	f) Associate the "Public Subnet: with the route table "PublicRT"
+	g) Create another Subnet "Private Subnet" with CIDR Range 192.168.2.0/24 in us-east-1b
+
+
+Note: By default new subnet will be associated with "Main" Route Table which is Private Route table.
+
+
+
+2. Create an EC2 instance "Public Server" in public subnet
+
+3. Login to the Public Server
+
+	Public IP	: 54.87.129.20
+	Private Ip	: 192.168.1.15
+	UserName	: Administrator
+	Password	: NkZBw8Y)%a5zE5sq!Sk%FR.*6;2Fgd4f
+
+
+4. Create an EC2 instance "Private Server" in Private subnet
+
+5. Login to the Private server
+
+	Public IP	: NA
+	Private IP	: 192.168.2.75
+	UserName	: Administrator
+	Password	: IcWRhBlsJTAg%NSOuNGF)sAYFoVDPr2l
+
+
+Note: To access the Private subnet instances, we need to use a "Bastion Host", also known as Jump Server.
+
+
+
+
+

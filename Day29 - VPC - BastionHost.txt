@@ -1,0 +1,50 @@
+Bastion Host:
+-------------
+
+--> A bastion host is a special-purpose server used to provide secure access to a private network from an external network, such as the internet.
+
+
+--> It also called as Jumpserver
+
+--> Bastion host acts as a gateway between AWS private network and external network (Internet)
+
+
+1. Create a Windows Bastion host in the Public subnet.
+
+2. Access Private subnet instance with the help of Bastion Host.
+	- Login to the bastion Host
+	- from the bastion host login to the private subnet instance
+
+
+Private Instance:
+-----------------
+
+Private IP	: 192.168.2.75
+UserName	: Administrator
+Password	: IcWRhBlsJTAg%NSOuNGF)sAYFoVDPr2l
+
+
+BastionHost:
+------------
+
+Public IP	: 54.145.169.162
+Private IP	: 192.168.1.134
+UserName	: Administrator
+Password	: y)a8Ib3=VXpjE0F82x6gGOlcUuwjrNfh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

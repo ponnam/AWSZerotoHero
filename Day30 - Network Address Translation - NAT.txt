@@ -1,0 +1,61 @@
+Network Address Translation - NAT:
+----------------------------------
+
+--> NAT is the process of sharing the internet connection with the private subnet or local network
+
+--> NAT will never assign any public IP to the private subnet instances.
+
+--> NAT will never allow any incoming traffic from the outside of the network (From the internet)
+
+--> On AWS we can create 2 types of NAT
+
+	- NAT Instance (outdated)
+	- NAT Gateway
+
+NOTE: NAT Instance is an EC2 instance, in which the NAT software is installed and running.
+
+
+NAT Gateway:
+------------
+
+--> It is AWS Managed Highly Available & Highly Scalable NAT Service
+
+--> AWS will maintain the NAT Gateway as Highly available By providing redundant Service if the NAT Gateway Failed
+
+--> Network Bandwidth will be automatically adjusted (Increased or reduced) based on the usage to provide High Performance while using the internet.
+
+--> NAT Gateway is chargeable on per hour basis
+
+--> NAT Gateway requires an elastic IP Address
+
+
+1. Create a NAT Gateway "MyFirstVPC-NAT" and provide interent access to the private subnet of "MyFirstVPC"
+
+	a) Allocate an Elastic IP Address
+	b) Create NAT Gateway using the above EIP
+	c) Create an additional route in the PrivateRT as below
+
+	Destination			Target
+	-----------			------
+
+	192.168.0.0/16			Local		--> Default Route
+
+	0.0.0.0/0			NAT GAteway	--> Additional Route
+
+
+
+
+2. Cleanup NAT Gateway and all resources
+
+	a) Delete NAT Gateway
+	b) Release Elastic IP Address
+
+
+
+
+
+
+
+
+
+
